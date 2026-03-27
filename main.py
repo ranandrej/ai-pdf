@@ -66,11 +66,11 @@ def ask_question():
     
     client = Groq(api_key=os.environ.get('GROQ_API_KEY'))
     completion = client.chat.completions.create(
-        model="llama3-70b-8192",
+        model="openai/gpt-oss-20b",
         messages=[
             {
                 "role": "user",
-                "content": f"Based on the following content, please answer this question: {question}\n\nContent: {file_content}"
+                "content": f"Based on the following content, please answer this question,question will be on serbian language so please answer on serbian too and be gramatically correct: {question}\n\nContent: {file_content}"
             }
         ],
         temperature=0.7,
